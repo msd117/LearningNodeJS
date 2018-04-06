@@ -71,3 +71,15 @@ greetr1.on(Globalconstants.events.INHERITANCEGREET,function(data){
 });
 
 greetr1.greetings("sohel");
+
+// template Literals
+
+var obj={
+    name : "Mohd Sohel",
+    greet : function(qualification,age){
+        console.log(`Hi,I am ${ this.name}(${qualification}) and my age is ${age} `);
+    }
+}
+obj.greet("B.E","28");
+obj.greet.call({name:"shaikh Naim"},"M.Sc","28");
+obj.greet.apply({name:"Mohammed Nadeem"},["M.C.A","26"]);
