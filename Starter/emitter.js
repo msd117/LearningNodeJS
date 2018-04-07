@@ -1,3 +1,6 @@
+// this js file is used to demonstrate how events are faked in NodeJS
+
+
 function emitter(){
     this.events={};
 }

@@ -5,9 +5,8 @@ var greetings= require("./translate")
 var emitter=require("events");
 var Globalconstants =require("./constants")
 // Inheritance using inherits keyword
-var greetr=require("./inherit.js");
-var Eventemitter=require("events");
-var util=require("util");
+
+
 
 require("./prototype");
 
@@ -21,6 +20,8 @@ nadeem.thanks();
 Naim.thanks();
 sohel.thanks();
 console.log(sohel.__proto__);
+
+// example for pass by value and pass by reference ...Primitive data type are passed by value and objects are pass by reference
 
 var a=3;
 console.log("Before Calling change function on primitive value a:" +a)
@@ -48,6 +49,9 @@ greetings.spanish("ramiz");
 
 
 
+// Concept of events explained by using a events.js file 
+// If you want to ceheck how event are executed in the most basic manner then just Uncomment this line on top var emitter=require("./emitter.js"); and comment the other one and debug it with breakpoints
+
 var emt =new emitter();
 emt.on(Globalconstants.events.GREET,function(){
     console.log("Sohel said Hi !!!");
@@ -58,19 +62,9 @@ emt.on(Globalconstants.events.GREET,function(){
 console.log("Hi");
 emt.emit(Globalconstants.events.GREET);
 
-util.inherits(greetr,Eventemitter);
 
-greetr.prototype.greetings=function(data){
-    console.log(this.greeting);
-    this.emit(Globalconstants.events.INHERITANCEGREET,data);
-}
 
-var greetr1 =new greetr();
-greetr1.on(Globalconstants.events.INHERITANCEGREET,function(data){
-    console.log("Inheritance done By::" +data);
-});
 
-greetr1.greetings("sohel");
 
 // template Literals
 
